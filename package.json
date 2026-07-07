@@ -1,0 +1,20 @@
+{
+  "name": "nex-portability-test",
+  "version": "0.1.0",
+  "description": "Proof-of-concept portability verifier for self-hosted Node.js services on NixOS",
+  "license": "MIT",
+  "type": "module",
+  "private": false,
+  "engines": {
+    "node": ">=20"
+  },
+  "bin": {
+    "npt": "src/cli.js"
+  },
+  "scripts": {
+    "start": "node src/cli.js serve",
+    "test": "node --test",
+    "verify": "node src/cli.js verify",
+    "receipt": "node src/cli.js receipt"
+  }
+}

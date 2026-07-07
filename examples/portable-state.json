@@ -1,0 +1,1 @@
+{"format":"npt-portable-state","records":[{"id":"example","value":"This record survives export and restore."}],"schemaVersion":"1.0","service":"org.nexope.nex-portability-test.reference-service"}

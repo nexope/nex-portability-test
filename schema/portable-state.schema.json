@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nexope.it/schemas/npt/portable-state-1.0.schema.json",
+  "title": "NEX-Portability Test portable state",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["format", "records", "schemaVersion", "service"],
+  "properties": {
+    "format": { "const": "npt-portable-state" },
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "value"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1, "maxLength": 80 },
+          "value": { "type": "string", "minLength": 1, "maxLength": 2000 }
+        }
+      }
+    },
+    "schemaVersion": { "const": "1.0" },
+    "service": { "const": "org.nexope.nex-portability-test.reference-service" }
+  }
+}

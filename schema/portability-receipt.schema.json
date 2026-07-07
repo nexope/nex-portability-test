@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nexope.it/schemas/npt/portability-receipt-1.0.schema.json",
+  "title": "NEX-Portability Test receipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["deploymentFiles", "format", "service", "verification", "version"],
+  "properties": {
+    "deploymentFiles": {
+      "type": "object",
+      "additionalProperties": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+    },
+    "format": { "const": "npt-portability-receipt" },
+    "service": { "const": "org.nexope.nex-portability-test.reference-service" },
+    "verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["bundleSha256", "deterministicExport", "roundTripEqual", "schemaValidated"],
+      "properties": {
+        "bundleSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "deterministicExport": { "const": true },
+        "roundTripEqual": { "const": true },
+        "schemaValidated": { "const": true }
+      }
+    },
+    "version": { "const": "1.0" }
+  }
+}
